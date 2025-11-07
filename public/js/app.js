@@ -9,7 +9,7 @@
     }
   }
 
-// ...
+  
 
 // Actualiza los totales del dashboard cuando estamos en /admin (sin tablas)
 function actualizarDashboardAdmin() {
@@ -25,7 +25,7 @@ function actualizarDashboardAdmin() {
   }
 }
 
-// ...
+
 
 console.log('app.js cargado correctamente'); 
 
@@ -34,6 +34,20 @@ function $all(sel, root = document) { return Array.from(root.querySelectorAll(se
 function formatearCLP(n) { return n.toLocaleString('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 }); }
 function guardarLS(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
 function obtenerLS(key, fallback) { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } }
+// Normaliza rutas de imagen relativas a absolutas bajo /
+function toAbs(url) {
+  if (!url) return '/img/logo-level-Up.png';
+  if (/^https?:\/\//i.test(url)) return url;
+  if (/^data:/i.test(url)) return url;
+  if (url.startsWith('/')) return url;
+  // quitar prefijos public/
+  if (url.startsWith('public/')) url = url.replace(/^public\//, '');
+  if (url.startsWith('/public/')) url = url.replace(/^\/public\//, '/');
+  if (url.startsWith('img/')) return `/${url}`;
+  // Normalizar barras invertidas y espacios
+  let path = `/${url}`.replace(/\\/g, '/');
+  try { return encodeURI(path); } catch { return path; }
+}
 
 // Corrige atributos legacy "className" en HTML inyectado para que apliquen estilos Bootstrap
 function fixLegacyClassNameAttributes(root = document) {
@@ -394,7 +408,7 @@ function renderizarProductosFiltrados() {
     div.innerHTML = `
       <div class="contenedor-imagen-productos">
         ${badge}
-        <img class="imagen-producto-productos" src="${p.imagen || 'img/logo-level-Up.png'}" alt="${p.nombre}" loading="lazy" onerror="this.src='img/logo-level-Up.png'">
+        <img class="imagen-producto-productos" src="${toAbs(p.imagen || 'img/logo-level-Up.png')}" alt="${p.nombre}" loading="lazy" onerror="this.src='/img/logo-level-Up.png'">
       </div>
       <div class="info-producto-productos">
         <h5 class="nombre-producto-productos">${p.nombre}</h5>
@@ -421,13 +435,21 @@ function renderizarDetalle() {
     return;
   }
   const params = new URLSearchParams(location.search);
-  const id = params.get('id');
+  let id = params.get('id');
+  // Soporte SPA: si no viene ?id=, intentar leer desde la ruta /producto/:id
+  if (!id) {
+    const m = location.pathname.match(/\/producto\/(\d+)/i);
+    if (m && m[1]) id = m[1];
+  }
   console.log('ID del producto:', id);
   if (!id) {
     console.log('ERROR: No se encontró ID en URL');
     return;
   }
-  const p = PRODUCTOS.find(x => String(x.id) === String(id));
+  // Priorizar productos guardados en LS (Admin) y luego fallback al catálogo embebido
+  const guardados = obtenerLS('productos', []);
+  const p = (Array.isArray(guardados) ? guardados.find(x => String(x.id) === String(id)) : null) 
+          || PRODUCTOS.find(x => String(x.id) === String(id));
   if (!p) {
     console.log('ERROR: Producto no encontrado para ID:', id);
     return;
@@ -451,7 +473,7 @@ function renderizarDetalle() {
       <div className="product-gallery">
         <div style="position:relative">
           ${d>0 ? `<span class="insignia-producto-productos" style="left:10px;top:10px;position:absolute">${Math.round(d*100)}% OFF</span>` : ''}
-          <img src="${p.imagen}" alt="${p.nombre}" class="main-image" id="detalle-img" onerror="this.src='img/logo-level-Up.png'" style="width: 100%; height: 400px; object-fit: contain; border-radius: 10px; background-color: #f0f0f0;">
+          <img src="${toAbs(p.imagen)}" alt="${p.nombre}" class="main-image" id="detalle-img" onerror="this.src='/img/logo-level-Up.png'" style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 10px; background-color: #f0f0f0; cursor: zoom-in;" data-bs-toggle="modal" data-bs-target="#imagenModal">
         </div>
       </div>
     </div>
@@ -474,6 +496,16 @@ function renderizarDetalle() {
       </div>
     </div>`;
   fixLegacyClassNameAttributes(cont);
+
+  // Preparar modal de imagen a tamaño completo
+  const modal = document.getElementById('imagenModal');
+  const img = document.getElementById('detalle-img');
+  if (modal && img) {
+    modal.addEventListener('show.bs.modal', () => {
+      const body = modal.querySelector('.modal-body');
+      if (body) body.innerHTML = `<img src="${toAbs(img.getAttribute('src'))}" alt="${p.nombre}" style="max-width:95vw;max-height:90vh;height:auto;display:block;margin:0 auto;border-radius:8px;object-fit:contain;">`;
+    });
+  }
 
   const btn = $('#btn-agregar-detalle');
   if (btn) btn.addEventListener('click', () => {
@@ -534,7 +566,7 @@ function renderizarCarrito() {
     div.style.borderRadius = '8px';
     div.style.color = 'white';
     div.innerHTML = `
-      <img src="${item.imagen || 'img/logo-level-Up.png'}" alt="${item.nombre}" onerror="this.src='img/logo-level-Up.png'" style="width: 80px; height: 80px; object-fit: cover; border-radius: 6px; margin-right: 15px;">
+      <img src="${toAbs(item.imagen || 'img/logo-level-Up.png')}" alt="${item.nombre}" onerror="this.src='/img/logo-level-Up.png'" style="width: 80px; height: 80px; object-fit: cover; border-radius: 6px; margin-right: 15px;">
       <div className="info-item" style="flex: 1;">
         <h4 style="margin: 0 0 5px 0; color: #28a745;">${item.nombre}</h4>
         <p style="margin: 0; color: #ccc;">Código: ${item.codigo || item.id} | Precio: ${formatearCLP(item.precio)}</p>
@@ -617,7 +649,7 @@ function renderizarRecomendaciones(selector = '.recomendaciones', cantidad = 8) 
     div.innerHTML = `
       <div style="position:relative">
         ${badge}
-        <img class="imagen-producto-inicio" src="${p.imagen}" alt="${p.nombre}" loading="lazy" onerror="this.src='img/logo-level-Up.png'">
+        <img class="imagen-producto-inicio" src="${toAbs(p.imagen)}" alt="${p.nombre}" loading="lazy" onerror="this.src='/img/logo-level-Up.png'">
       </div>
       <div class="info-producto-inicio">
         <h5 class="nombre-producto-inicio">${p.nombre}</h5>
@@ -925,7 +957,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const ver = e.target.closest('.btn-ver-detalle');
     if (ver && ver.dataset.id) {
       console.log('Ver detalle para ID:', ver.dataset.id);
-      location.href = `/detalle?id=${encodeURIComponent(ver.dataset.id)}`;
+      // Navegación SPA hacia la ruta React /producto/:id
+      location.href = `/producto/${encodeURIComponent(ver.dataset.id)}`;
     }
   });
 });
@@ -1275,3 +1308,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
