@@ -1,0 +1,1224 @@
+/* ============================================================
+   LEVEL-UP GAMER - PANEL DE ADMINISTRACIÓN
+   Archivo: pagina-admin.css
+   Descripción: Estilos para el panel de administración de Level Up
+   ============================================================ */
+
+/* ==================== VARIABLES ESPECÍFICAS DEL ADMIN ==================== */
+:root {
+  /* Colores principales de Level Up */
+  --levelup-dark: #0a0a0a;          /* Negro profundo */
+  --levelup-darker: #050505;        /* Negro más oscuro */
+  --levelup-primary: #00ff88;       /* Verde neón */
+  --levelup-secondary: #00b8d4;     /* Azul neón */
+  --levelup-accent: #ff3d71;        /* Rosa neón */
+  --levelup-text: #e0e0e0;          /* Texto claro */
+  --levelup-text-secondary: #b0b0b0; /* Texto secundario */
+  --levelup-border: #2a2a2a;        /* Borde de elementos */
+  --levelup-card-bg: #121212;       /* Fondo de tarjetas */
+  --levelup-hover: #1e1e1e;         /* Fondo hover */
+  --levelup-gradient: linear-gradient(135deg, #00ff88 0%, #00b8d4 100%);
+}
+
+/* ===== Productos compact view ===== */
+.products-container .card-header {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+.products-table th,
+.products-table td {
+  padding: 0.5rem 0.75rem !important;
+}
+.products-table img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: cover;
+}
+.products-table .badge {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+}
+.products-table .fw-semibold {
+  font-weight: 600;
+}
+
+/* Estilos generales */
+.pagina-admin {
+  background-color: var(--levelup-darker);
+  color: var(--levelup-text);
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ==================== SIDEBAR ==================== */
+.admin-sidebar {
+  min-height: 100vh;
+  background-color: var(--levelup-dark);
+  color: var(--levelup-text);
+  padding: 1.5rem 0;
+  border-right: 1px solid var(--levelup-border);
+  position: fixed;
+  width: 280px;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo del sidebar */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--levelup-border);
+}
+
+.sidebar-logo img {
+  max-width: 140px;
+  max-height: 48px;
+  width: auto;
+  height: auto;
+}
+
+/* Texto de marca bajo el logo del sidebar */
+.sidebar-logo .brand-name {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--levelup-primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sidebar-menu {
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+
+.sidebar-link {
+  color: var(--levelup-text-secondary);
+  padding: 0.8rem 1.5rem;
+  margin: 0.25rem 0;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+  background: var(--levelup-hover);
+  color: var(--levelup-primary);
+  transform: translateX(5px);
+}
+
+.sidebar-link i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+}
+
+/* Badge de notificaciones */
+.badge-notification {
+  background: var(--levelup-accent);
+  color: white;
+  border-radius: 10px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+/* ==================== CONTENIDO PRINCIPAL ==================== */
+.main-content {
+  margin-left: 280px;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* ==================== TARJETAS ==================== */
+.card {
+  background-color: var(--levelup-card-bg);
+  border: 1px solid var(--levelup-border);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--levelup-border);
+  padding: 1.25rem 1.5rem;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}
+
+.card-header h5 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--levelup-primary);
+  font-size: 1.1rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* ==================== BOTONES ==================== */
+.btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn i {
+  margin-right: 8px;
+}
+
+.btn-primary {
+  background-color: var(--levelup-primary);
+  border-color: var(--levelup-primary);
+  color: #000;
+  font-weight: 600;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #00e676;
+  border-color: #00e676;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+}
+
+.btn-outline-primary {
+  border-color: var(--levelup-primary);
+  color: var(--levelup-primary);
+  background: transparent;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+  background-color: var(--levelup-primary);
+  border-color: var(--levelup-primary);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+}
+
+.btn-secondary {
+  background-color: var(--levelup-secondary);
+  border-color: var(--levelup-secondary);
+  color: #000;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: #00acc1;
+  border-color: #00acc1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 184, 212, 0.2);
+}
+
+/* ==================== FORMULARIOS ==================== */
+.form-control, .form-select {
+  background-color: var(--levelup-card-bg);
+  border: 1px solid var(--levelup-border);
+  color: var(--levelup-text);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--levelup-card-bg);
+  border-color: var(--levelup-primary);
+  color: var(--levelup-text);
+  box-shadow: 0 0 0 0.25rem rgba(0, 255, 136, 0.1);
+}
+
+.form-label {
+  color: var(--levelup-text);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.input-group-text {
+  background-color: var(--levelup-dark);
+  border: 1px solid var(--levelup-border);
+  color: var(--levelup-text-secondary);
+}
+
+/* ==================== TABLAS ==================== */
+.table {
+  color: var(--levelup-text);
+  margin-bottom: 0;
+}
+
+.table thead th {
+  border-bottom: 2px solid var(--levelup-border);
+  border-top: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: var(--levelup-text-secondary);
+  padding: 1rem;
+}
+
+.table tbody td {
+  border-top: 1px solid var(--levelup-border);
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background-color: var(--levelup-hover);
+}
+
+/* ==================== BADGES ==================== */
+.badge {
+  padding: 0.4em 0.8em;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.bg-primary {
+  background-color: rgba(0, 255, 136, 0.2) !important;
+  color: var(--levelup-primary);
+}
+
+.badge.bg-success {
+  background-color: rgba(0, 184, 212, 0.2) !important;
+  color: var(--levelup-secondary);
+}
+
+.badge.bg-warning {
+  background-color: rgba(255, 193, 7, 0.2) !important;
+  color: #ffc107;
+}
+
+.badge.bg-danger {
+  background-color: rgba(255, 61, 113, 0.2) !important;
+  color: var(--levelup-accent);
+}
+
+.sidebar-link.active {
+  background: linear-gradient(90deg, rgba(0, 200, 83, 0.2), transparent);
+  color: var(--levelup-primary);
+  border-left: 3px solid var(--levelup-primary);
+  font-weight: 600;
+  transform: translateX(5px);
+}
+
+/* ==================== TIMELINE ==================== */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--levelup-border);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-badge {
+  position: absolute;
+  left: -0.5rem;
+  top: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-content {
+  background: var(--levelup-card-bg);
+  border: 1px solid var(--levelup-border);
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+}
+
+.timeline-content h6 {
+  margin-top: 0;
+  color: var(--levelup-primary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--levelup-text-secondary);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .admin-sidebar.show {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .sidebar-toggle {
+    display: block !important;
+  }
+}
+
+/* ==================== ANIMACIONES ==================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* ==================== UTILIDADES ==================== */
+.text-gradient {
+  background: var(--levelup-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.shadow-primary {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.shadow-secondary {
+  box-shadow: 0 0 15px rgba(0, 184, 212, 0.2);
+}
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--levelup-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--levelup-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--levelup-text-secondary);
+}
+
+/* Contenido principal */
+.admin-content {
+  margin-left: 250px;
+  padding: 2rem;
+  background-color: var(--levelup-darker);
+  min-height: 100vh;
+}
+
+/* Tarjetas de estadísticas */
+.stat-card {
+  background: var(--levelup-card-bg);
+  border: 1px solid var(--levelup-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--levelup-primary), var(--levelup-secondary));
+  z-index: -1;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card .card-body {
+  padding: 1.5rem;
+}
+
+.stat-card .card-title {
+  color: var(--levelup-text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card .card-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--levelup-text);
+  margin: 0.5rem 0;
+}
+
+.stat-card .card-icon {
+  font-size: 2.5rem;
+  opacity: 0.2;
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  color: var(--levelup-primary);
+}
+
+/* Tablas */
+.table {
+  background: var(--levelup-card-bg);
+  color: var(--levelup-text);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background-color: var(--levelup-dark);
+  border-bottom: 2px solid var(--levelup-border);
+  color: var(--levelup-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  padding: 1rem;
+}
+
+.table td {
+  border-color: var(--levelup-border);
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Formularios */
+.form-control {
+  background-color: var(--levelup-card-bg);
+  border: 1px solid var(--levelup-border);
+  color: var(--levelup-text);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background-color: var(--levelup-card-bg);
+  border-color: var(--levelup-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 200, 83, 0.25);
+  color: var(--levelup-text);
+}
+
+.form-label {
+  color: var(--levelup-text-secondary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Botones */
+.btn {
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: var(--levelup-primary);
+  border-color: var(--levelup-primary);
+  color: #000;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #00b34a;
+  border-color: #00a844;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 200, 83, 0.2);
+}
+
+.btn-outline-primary {
+  color: var(--levelup-primary);
+  border-color: var(--levelup-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--levelup-primary);
+  border-color: var(--levelup-primary);
+  color: #000;
+}
+
+/* Alertas */
+.alert {
+  border-radius: 8px;
+  border: none;
+  padding: 1rem 1.5rem;
+}
+
+.alert-success {
+  background-color: rgba(0, 200, 83, 0.15);
+  color: var(--levelup-primary);
+  border-left: 4px solid var(--levelup-primary);
+}
+
+/* Tarjetas */
+.card {
+  background: var(--levelup-card-bg);
+  border: 1px solid var(--levelup-border);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: var(--levelup-dark);
+  border-bottom: 1px solid var(--levelup-border);
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  color: var(--levelup-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Badges */
+.badge {
+  padding: 0.4em 0.8em;
+  font-weight: 500;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-success {
+  background-color: rgba(0, 200, 83, 0.2);
+  color: var(--levelup-primary);
+}
+
+.badge-warning {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.badge-danger {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .admin-sidebar.show {
+    transform: translateX(0);
+  }
+  
+  .admin-content {
+    margin-left: 0;
+  }
+  
+  .sidebar-toggle {
+    display: block !important;
+  }
+}
+
+/* Toggle para el sidebar en móviles */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1050;
+  background: var(--levelup-primary);
+  border: none;
+  border-radius: 4px;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* (Eliminado) Reglas antiguas que forzaban anchos porcentuales y achicaban el layout en escritorio */
+
+/* ==================== ESTRUCTURA PRINCIPAL ==================== */
+.admin-container {
+  background-color: var(--levelup-darker);
+  color: var(--levelup-text);
+}
+
+/* Sidebar */
+.admin-sidebar {
+  width: 280px;
+  height: 100vh;
+  background-color: var(--levelup-dark);
+  position: fixed;
+  left: -280px;
+  top: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.admin-sidebar.show {
+  left: 0;
+}
+
+.sidebar-content {
+  padding: 1.5rem;
+}
+
+.sidebar-logo {
+  text-align: center;
+  padding: 1rem 0 2rem;
+}
+
+.sidebar-logo img {
+  max-width: 180px;
+  height: auto;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-menu a, .sidebar-menu button {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--levelup-text-secondary);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar-menu a:hover, .sidebar-menu button:hover,
+.sidebar-menu a.active, .sidebar-menu button.active {
+  background-color: var(--levelup-hover);
+  color: var(--levelup-primary);
+}
+
+.sidebar-menu svg {
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+}
+
+/* Contenido principal */
+.main-content {
+  margin-left: 0;
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-top: 1rem;
+}
+
+.content-wrapper {
+  padding: 1.5rem;
+  background-color: transparent;
+  border-radius: 0;
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Full width (sin padding) para vistas específicas como Usuarios */
+.content-wrapper.full-bleed {
+  padding: 0;
+}
+.content-wrapper.full-bleed .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Limitar ancho de Gestión de Productos para mejor legibilidad en pantallas muy anchas */
+.content-wrapper.full-bleed .products-container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 1800px) {
+  .content-wrapper.full-bleed .products-container { max-width: 1600px; }
+}
+
+/* Limitar el ancho visible de la descripción para no estirar la fila */
+.products-table .product-desc {
+  max-width: 420px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hacer que la tabla respete anchos y trunque contenido */
+.products-table {
+  table-layout: fixed;
+}
+.products-table th:nth-child(1),
+.products-table td:nth-child(1) { width: 48px; }
+.products-table th:nth-child(4),
+.products-table td:nth-child(4) { width: 120px; }
+.products-table th:nth-child(5),
+.products-table td:nth-child(5) { width: 120px; }
+.products-table th:nth-child(6),
+.products-table td:nth-child(6) { width: 96px; }
+
+/* Limitar y truncar el nombre del producto (2 líneas) */
+.products-table td:nth-child(2) .product-name {
+  max-width: 260px;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Limitar ancho de Gestión de Usuarios para mejor legibilidad */
+.content-wrapper.full-bleed .users-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.content-wrapper.full-bleed .profile-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.users-table th,
+.users-table td {
+  padding: 0.5rem 0.75rem !important;
+}
+.users-table .badge {
+  font-size: 0.7rem;
+}
+
+/* Botones compactos en tablas (AdminUsuarios) */
+.action-buttons {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.btn-icon {
+  padding: 0.25rem;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+@media (max-width: 576px) {
+  .btn-icon { width: 28px; height: 28px; padding: 0.2rem; }
+}
+
+/* Header móvil */
+.mobile-header {
+  padding: 1rem;
+  background-color: var(--levelup-dark);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-toggle {
+  background: var(--levelup-gradient);
+  border: none;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Overlay para móviles */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+/* Media queries para escritorio */
+@media (min-width: 992px) {
+  .admin-sidebar {
+    left: 0;
+  }
+  
+  .main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+  }
+  
+  .mobile-header {
+    display: none;
+  }
+  
+  .admin-sidebar {
+    box-shadow: none;
+  }
+}
+
+.encabezado-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #333;
+}
+
+.titulo-admin {
+  font-size: 2rem;
+  color: #00ff88;
+}
+
+.acciones-admin {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ==================== TARJETAS DE ESTADÍSTICAS ==================== */
+.grid-estadisticas-admin {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tarjeta-estadistica-admin {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-estadistica-admin:hover {
+  border-color: #00ff88;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.2);
+}
+
+.encabezado-estadistica-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.titulo-estadistica-admin {
+  color: #ccc;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.icono-estadistica-admin {
+  font-size: 2rem;
+  color: #00ff88;
+}
+
+.valor-estadistica-admin {
+  font-size: 2rem;
+  color: #00ff88;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.cambio-estadistica-admin {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.cambio-estadistica-admin.positivo {
+  color: #00ff88;
+}
+
+.cambio-estadistica-admin.negativo {
+  color: #ff3d00;
+}
+
+/* ==================== TABLAS ADMIN ==================== */
+.contenedor-tabla-admin {
+  background-color: #1e1e1e;
+  border: 2px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.tabla-admin {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.tabla-admin thead {
+  background: linear-gradient(135deg, #00ff88, #00cc66);
+}
+
+.tabla-admin th {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid #00cc66;
+  position: relative;
+}
+
+.tabla-admin th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.tabla-admin th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.tabla-admin td {
+  padding: 1.25rem 1rem;
+  color: #fff;
+  border-bottom: 1px solid #333;
+  vertical-align: middle;
+}
+
+.tabla-admin tbody tr {
+  transition: all 0.3s ease;
+}
+
+.tabla-admin tbody tr:hover {
+  background-color: #2a2a2a;
+  transform: scale(1.01);
+}
+
+.tabla-admin tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-admin tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.tabla-admin tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+/* ==================== BOTONES DE ACCIÓN ADMIN ==================== */
+.botones-accion-admin {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-accion-admin {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+  font-size: 0.875rem;
+}
+
+.btn-editar-admin {
+  background-color: var(--primario-admin);
+  color: #000;
+}
+
+.btn-editar-admin:hover {
+  background-color: #1976D2;
+}
+
+.btn-eliminar-admin {
+  background-color: #ff3d00;
+  color: #fff;
+}
+
+.btn-eliminar-admin:hover {
+  background-color: #d32f2f;
+}
+
+.btn-ver-admin {
+  background-color: var(--secundario-admin);
+  color: #000;
+}
+
+.btn-ver-admin:hover {
+  background-color: #388E3C;
+}
+
+/* ==================== INSIGNIAS ADMIN ==================== */
+.insignia-admin {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.insignia-exito-admin {
+  background-color: var(--secundario-admin);
+  color: #000;
+}
+
+.insignia-advertencia-admin {
+  background-color: var(--acento-admin);
+  color: #000;
+}
+
+.insignia-error-admin {
+  background-color: #ff3d00;
+  color: #fff;
+}
+
+.insignia-info-admin {
+  background-color: var(--primario-admin);
+  color: #000;
+}
+
+/* ==================== RESPONSIVE - ADMIN ==================== */
+@media (max-width: 992px) {
+  .barra-lateral-admin {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .barra-lateral-admin.mostrar {
+    transform: translateX(0);
+  }
+
+  .contenido-admin {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .grid-estadisticas-admin {
+    grid-template-columns: 1fr;
+  }
+
+  .encabezado-admin {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .contenedor-tabla-admin {
+    overflow-x: auto;
+  }
+
+  .tabla-admin th,
+  .tabla-admin td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenido-admin {
+    padding: 1rem;
+  }
+
+  .titulo-admin {
+    font-size: 1.5rem;
+  }
+
+  .acciones-admin {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .acciones-admin .btn {
+    flex: 1;
+    max-width: 150px;
+  }
+}

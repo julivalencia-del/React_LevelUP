@@ -1,0 +1,486 @@
+/* ============================================================
+   LEVEL-UP GAMER - CARRITO DE COMPRAS
+   Archivo: pagina-carrito.css
+   Descripción: Colores y estilos específicos SOLO para carrito.html
+   ============================================================ */
+
+/* ==================== VARIABLES ESPECÍFICAS DEL CARRITO ==================== */
+:root {
+  /* Colores únicos del carrito */
+  --fondo-carrito: #1a1a1a;        /* Fondo gris oscuro */
+  --texto-carrito: #FFFFFF;         /* Texto blanco */
+  --primario-carrito: #00c853;      /* Verde éxito */
+  --secundario-carrito: #ff6b35;    /* Naranja gaming */
+  --acento-carrito: #ffd93d;        /* Amarillo oro */
+  --borde-carrito: #444444;         /* Borde gris */
+}
+
+/* ==================== MODAL BOLETA ==================== */
+.overlay-boleta {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+
+.modal-boleta {
+  width: min(900px, 95vw);
+  max-height: 85vh;
+  overflow: auto;
+  background: #0f0f0f;
+  border: 1px solid var(--borde-carrito);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--texto-carrito);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.modal-boleta-header {
+  border-bottom: 1px solid var(--borde-carrito);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.badge-orden-level {
+  background-color: var(--primario-carrito) !important; /* verde Level Up */
+  color: #000 !important;
+  border: 1px solid #00a846;
+}
+
+/* ==================== TABLA DEL CARRITO (OSCURA) ==================== */
+.tabla-carrito {
+  background-color: #0a0a0a !important; /* fondo base de la tabla */
+  color: var(--texto-carrito);
+  border-color: var(--borde-carrito) !important;
+  border-collapse: collapse !important;
+  /* Forzar variables Bootstrap de tabla oscura */
+  --bs-table-bg: #0d0d0d;
+  --bs-table-striped-bg: #101010;
+  --bs-table-striped-color: var(--texto-carrito);
+  --bs-table-hover-bg: #141414;
+  --bs-table-hover-color: var(--texto-carrito);
+  --bs-table-color: var(--texto-carrito);
+}
+
+.tabla-carrito.table-dark {
+  --bs-table-bg: #0d0d0d;
+  --bs-table-striped-bg: #101010;
+  --bs-table-hover-bg: #141414;
+  --bs-table-color: var(--texto-carrito);
+  --bs-table-striped-color: var(--texto-carrito);
+}
+
+.tabla-carrito, .tabla-carrito * {
+  background-image: none !important;
+}
+
+.tabla-carrito thead,
+.tabla-carrito tbody,
+.tabla-carrito tfoot {
+  background-color: #0a0a0a !important;
+}
+
+.tabla-carrito thead th {
+  background-color: #111 !important;
+  color: var(--texto-carrito) !important;
+  border-color: var(--borde-carrito) !important;
+}
+
+.tabla-carrito tbody td {
+  background-color: #0d0d0d !important;
+  color: var(--texto-carrito) !important;
+  border-color: var(--borde-carrito) !important;
+}
+
+.tabla-carrito thead tr,
+.tabla-carrito tbody tr {
+  background-color: transparent !important;
+}
+
+/* Asegurar que cualquier celda heredada de .table aplique el fondo oscuro */
+.tabla-carrito.table > :not(caption) > * > * {
+  background-color: #0d0d0d !important;
+  color: var(--texto-carrito) !important;
+  box-shadow: inset 0 0 0 9999px rgba(0,0,0,0); /* neutraliza sombras de bs */
+  padding-top: 0.25rem;   /* celdas más compactas */
+  padding-bottom: 0.25rem;/* celdas más compactas */
+}
+
+.tabla-carrito tr,
+.tabla-carrito th,
+.tabla-carrito td {
+  border-color: var(--borde-carrito) !important;
+}
+
+.tabla-carrito tbody tr:hover td {
+  background-color: #141414 !important;
+}
+
+/* Forzar listrado oscuro de Bootstrap */
+.tabla-carrito.table-striped>tbody>tr:nth-of-type(odd)>* {
+  background-color: #101010 !important;
+}
+.tabla-carrito.table-striped>tbody>tr:nth-of-type(even)>* {
+  background-color: #0d0d0d !important;
+}
+
+/* Tfoot oscuro si se usa */
+.tabla-carrito tfoot td,
+.tabla-carrito tfoot th {
+  background-color: #0f0f0f !important;
+  color: var(--texto-carrito) !important;
+  border-color: var(--borde-carrito) !important;
+}
+
+/* Contenedor responsivo no debe introducir fondo claro */
+.table-responsive {
+  background: transparent;
+}
+
+/* ==================== CUERPO DE LA PÁGINA ==================== */
+.pagina-carrito {
+  background-color: var(--fondo-carrito);
+  color: var(--texto-carrito);
+}
+
+/* ==================== BARRA DE NAVEGACIÓN - CARRITO ==================== */
+.barra-navegacion-carrito {
+  background-color: var(--fondo-carrito);
+  border-bottom: 2px solid var(--borde-carrito);
+  padding: 1rem 0;
+}
+
+.marca-carrito {
+  color: var(--acento-carrito);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.marca-carrito:hover {
+  color: var(--primario-carrito);
+}
+
+/* ==================== CONTENIDO DEL CARRITO ==================== */
+.carrito-contenido {
+  padding: 2rem 0;
+  min-height: 100vh;
+}
+
+.titulo-carrito {
+  font-size: 2rem;
+  color: var(--primario-carrito);
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1.5px;
+}
+
+/* ==================== LAYOUT DEL CARRITO ==================== */
+.layout-carrito {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==================== ITEMS DEL CARRITO ==================== */
+.items-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-carrito {
+  background-color: var(--fondo-carrito);
+  border: 2px solid var(--borde-carrito);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  transition: var(--transicion-normal);
+}
+
+.item-carrito:hover {
+  border-color: var(--primario-carrito);
+  box-shadow: 0 0 10px rgba(0, 200, 83, 0.3);
+}
+
+.imagen-item-carrito {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #333;
+}
+
+.info-item-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nombre-item-carrito {
+  font-size: 1.125rem;
+  color: var(--texto-carrito);
+  font-weight: 600;
+}
+
+.categoria-item-carrito {
+  color: var(--texto-carrito);
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.precio-unitario-carrito {
+  color: var(--primario-carrito);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.controles-item-carrito {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.celda-cantidad-carrito {
+  text-align: center;
+  vertical-align: middle;
+  display: flex;                 /* apila contenido dentro del td */
+  flex-direction: column;        /* cantidad arriba, eliminar abajo */
+  align-items: center;           /* centrado horizontal */
+  gap: 0.25rem;                  /* separación vertical control/botón */
+}
+
+.cantidad-item-carrito {
+  display: inline-flex; /* se centra con text-align del td */
+  align-items: center;
+  gap: 0.25rem; /* caja más compacta */
+  background-color: #333;
+  border: 1px solid var(--borde-carrito);
+  border-radius: 3px; /* caja más pequeña */
+  padding: 0.1rem 0.15rem; /* caja más pequeña */
+  min-height: 22px; /* altura contenida */
+  justify-content: center; /* centra -, número y + dentro de la caja */
+}
+
+.btn-cantidad-carrito {
+  width: 12px;   /* ultra compacto final */
+  height: 12px;  /* ultra compacto final */
+  background-color: transparent;
+  border: none;
+  color: var(--texto-carrito);
+  cursor: pointer;
+  font-size: 0.6rem; /* ultra compacto final */
+  transition: var(--transicion-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.btn-cantidad-carrito:hover {
+  color: var(--primario-carrito);
+  transform: scale(1.2);
+}
+
+.pantalla-cantidad-carrito {
+  min-width: 20px; /* ultra compacto */
+  text-align: center;
+  font-weight: 600;
+  color: var(--texto-carrito);
+  font-size: 0.8rem;
+}
+
+.subtotal-item-carrito {
+  font-size: 1.25rem;
+  color: var(--secundario-carrito);
+  font-weight: bold;
+}
+
+.btn-eliminar-carrito {
+  background-color: transparent;
+  border: 1px solid #ff3d00;
+  color: #ff3d00;
+  padding: 0.1rem 0.35rem; /* ultra compacto */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.6rem; /* ultra compacto */
+  transition: var(--transicion-normal);
+  display: inline-block;         /* asegura bloque independiente bajo el control */
+}
+
+.btn-eliminar-carrito:hover {
+  background-color: #ff3d00;
+  color: #fff;
+}
+
+/* ==================== RESUMEN DEL CARRITO ==================== */
+.resumen-carrito {
+  background-color: var(--fondo-carrito);
+  border: 2px solid var(--borde-carrito);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.titulo-resumen-carrito {
+  font-size: 1.25rem;
+  color: var(--texto-carrito);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--borde-carrito);
+}
+
+.linea-resumen-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: var(--texto-carrito);
+}
+
+.linea-resumen-carrito.total {
+  font-size: 1.25rem;
+  color: var(--secundario-carrito);
+  font-weight: bold;
+  padding-top: 1rem;
+  border-top: 2px solid var(--borde-carrito);
+  margin-top: 1rem;
+}
+
+.codigo-descuento-carrito {
+  margin: 1.5rem 0;
+}
+
+.input-codigo-carrito {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #333;
+  border: 1px solid var(--borde-carrito);
+  border-radius: 4px;
+  color: var(--texto-carrito);
+  margin-bottom: 0.5rem;
+}
+
+.btn-aplicar-carrito {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #333;
+  border: 1px solid var(--primario-carrito);
+  color: var(--primario-carrito);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+}
+
+.btn-aplicar-carrito:hover {
+  background-color: var(--primario-carrito);
+  color: #000;
+}
+
+.btn-finalizar-carrito {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primario-carrito);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+  margin-top: 1.5rem;
+}
+
+.btn-finalizar-carrito:hover {
+  background-color: var(--acento-carrito);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 217, 61, 0.5);
+}
+
+/* Contenedor de acciones del resumen */
+.acciones-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Botón Vaciar Carrito alineado y consistente */
+.btn-vaciar-carrito {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: transparent;
+  border: 1px solid #ff3d00;
+  color: #ff3d00;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+}
+
+.btn-vaciar-carrito:hover {
+  background-color: #ff3d00;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 61, 0, 0.4);
+}
+
+/* ==================== CARRITO VACÍO ==================== */
+.carrito-vacio {
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--fondo-carrito);
+  border: 2px dashed var(--borde-carrito);
+  border-radius: 8px;
+}
+
+.icono-carrito-vacio {
+  font-size: 5rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.texto-carrito-vacio {
+  font-size: 1.25rem;
+  color: var(--texto-carrito);
+  margin-bottom: 2rem;
+}
+
+/* ==================== RESPONSIVE - CARRITO ==================== */
+@media (max-width: 992px) {
+  .layout-carrito {
+    grid-template-columns: 1fr;
+  }
+
+  .resumen-carrito {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .item-carrito {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .imagen-item-carrito {
+    margin: 0 auto;
+  }
+
+  .controles-item-carrito {
+    align-items: center;
+  }
+}

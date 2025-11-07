@@ -1,0 +1,390 @@
+/* ============================================================
+   LEVEL-UP GAMER - PÁGINA DE BLOGS
+   Archivo: pagina-blogs.css
+   Descripción: Colores y estilos específicos SOLO para blogs.html
+   ============================================================ */
+
+/* ==================== VARIABLES ESPECÍFICAS DE BLOGS ==================== */
+:root {
+  /* Colores únicos de blogs */
+  --fondo-blogs: #1a1a1a;         
+  --texto-blogs: #F0F0F0;         
+  --primario-blogs: #00BCD4;       
+  --secundario-blogs: #4CAF50;    
+  --acento-blogs: #FFC107;         
+  --borde-blogs: #444444;         
+}
+
+/* ==================== CUERPO DE LA PÁGINA ==================== */
+.pagina-blogs {
+  background-color: var(--fondo-blogs);
+  color: var(--texto-blogs);
+}
+
+/* ==================== BARRA DE NAVEGACIÓN - BLOGS ==================== */
+/* Soporte para navbars Bootstrap en esta página */
+.pagina-blogs .navbar {
+  background-color: var(--fondo-blogs) !important;
+  border-bottom: 2px solid var(--borde-blogs);
+}
+
+.pagina-blogs .navbar .navbar-brand span {
+  color: var(--acento-blogs);
+}
+
+.pagina-blogs .navbar .nav-link {
+  color: var(--texto-blogs);
+  transition: var(--transicion-normal);
+}
+
+.pagina-blogs .navbar .nav-link.active,
+.pagina-blogs .navbar .nav-link:hover {
+  color: var(--primario-blogs);
+}
+
+.pagina-blogs .navbar .btn {
+  border-color: var(--primario-blogs);
+  color: var(--primario-blogs);
+}
+
+.pagina-blogs .navbar .btn:hover {
+  border-color: var(--secundario-blogs);
+  color: var(--secundario-blogs);
+}
+
+.pagina-blogs .navbar .badge.bg-electric {
+  background-color: var(--primario-blogs) !important;
+  color: #000;
+}
+
+/* ==================== PIE DE PÁGINA - BLOGS ==================== */
+.pagina-blogs .pie-pagina-inicio {
+  background-color: var(--fondo-blogs);
+  border-top: 2px solid var(--borde-blogs);
+  padding: 2rem 0;
+  margin-top: 3rem;
+  color: var(--texto-blogs);
+}
+
+.pagina-blogs .enlace-footer { color: var(--texto-blogs); text-decoration: none; }
+.pagina-blogs .enlace-footer:hover { color: var(--primario-blogs); }
+.pagina-blogs .borde-footer { border-top: 1px solid var(--borde-blogs); }
+
+/* ==================== HERO DE BLOGS ==================== */
+.hero-blogs {
+  background: linear-gradient(135deg, var(--fondo-blogs) 0%, #0f0f0f 100%);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.titulo-hero-blogs {
+  font-size: 2.5rem;
+  color: var(--primario-blogs);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.subtitulo-hero-blogs {
+  font-size: 1.125rem;
+  color: var(--texto-blogs);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+}
+
+/* ==================== GRID DE ARTÍCULOS ==================== */
+.grid-articulos-blogs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsivo y centrado */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: start;
+}
+
+/* ==================== TARJETA DE ARTÍCULO ==================== */
+.tarjeta-articulo-blogs {
+  background-color: var(--fondo-blogs);
+  border: 2px solid var(--borde-blogs);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--transicion-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.tarjeta-articulo-blogs:hover {
+  transform: translateY(-8px);
+  border-color: var(--primario-blogs);
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+}
+
+.imagen-articulo-blogs {
+  width: 100%;
+  height: 250px; /* altura uniforme */
+  object-fit: cover;
+  transition: var(--transicion-normal);
+  display: block;
+  max-height: 250px; /* evitar crecimientos inesperados */
+}
+
+.tarjeta-articulo-blogs:hover .imagen-articulo-blogs {
+  transform: scale(1.05);
+}
+
+.contenido-articulo-blogs {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoria-articulo-blogs {
+  color: var(--primario-blogs);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.titulo-articulo-blogs {
+  font-size: 1.25rem;
+  color: var(--texto-blogs);
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+.descripcion-articulo-blogs {
+  color: var(--texto-blogs);
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.pie-articulo-blogs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--borde-blogs);
+}
+
+.fecha-articulo-blogs {
+  color: var(--texto-blogs);
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.btn-leer-mas-blogs {
+  background-color: var(--primario-blogs);
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transicion-normal);
+}
+
+.btn-leer-mas-blogs:hover {
+  background-color: var(--acento-blogs);
+  transform: scale(1.05);
+}
+
+/* ==================== ARTÍCULO DESTACADO ==================== */
+.articulo-destacado-blogs {
+  background-color: var(--fondo-blogs);
+  border: 2px solid var(--primario-blogs);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.imagen-destacado-blogs {
+  height: 300px;
+  object-fit: cover;
+}
+
+.contenido-destacado-blogs {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titulo-destacado-blogs {
+  font-size: 1.5rem;
+  color: var(--primario-blogs);
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.descripcion-destacado-blogs {
+  color: var(--texto-blogs);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.btn-destacado-blogs {
+  background-color: var(--primario-blogs);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transicion-normal);
+  align-self: flex-start;
+}
+
+.btn-destacado-blogs:hover {
+  background-color: var(--acento-blogs);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+/* ==================== BARRA LATERAL - BLOGS ==================== */
+.barra-lateral-blogs {
+  background-color: var(--fondo-blogs);
+  border: 2px solid var(--borde-blogs);
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.titulo-sidebar-blogs {
+  font-size: 1.25rem;
+  color: var(--primario-blogs);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.categoria-sidebar-blogs {
+  display: block;
+  color: var(--texto-blogs);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--borde-blogs);
+  text-decoration: none;
+  transition: var(--transicion-normal);
+  font-size: 0.875rem;
+}
+
+.categoria-sidebar-blogs:hover {
+  color: var(--primario-blogs);
+  padding-left: 0.5rem;
+}
+
+.categoria-sidebar-blogs:last-child {
+  border-bottom: none;
+}
+
+/* ==================== ARTÍCULOS RECIENTES - BLOGS ==================== */
+.articulos-recientes-blogs {
+  margin-top: 2rem;
+}
+
+.titulo-recientes-blogs {
+  font-size: 1.125rem;
+  color: var(--secundario-blogs);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.articulo-recente-blogs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--borde-blogs);
+}
+
+.articulo-recente-blogs:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.imagen-recente-blogs {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.info-recente-blogs {
+  flex: 1;
+}
+
+.titulo-recente-blogs {
+  font-size: 0.875rem;
+  color: var(--texto-blogs);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.fecha-recente-blogs {
+  font-size: 0.75rem;
+  color: var(--texto-blogs);
+  opacity: 0.6;
+}
+
+/* ==================== RESPONSIVE - BLOGS ==================== */
+@media (max-width: 992px) {
+  .articulo-destacado-blogs {
+    grid-template-columns: 1fr;
+  }
+
+  .imagen-destacado-blogs {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-articulos-blogs {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-hero-blogs {
+    font-size: 2rem;
+  }
+
+  .contenido-destacado-blogs {
+    padding: 1.5rem;
+  }
+}
+
+/* ==================== LAYOUT DE DOS COLUMNAS ==================== */
+@media (min-width: 992px) {
+  .barra-lateral-blogs {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+/* Forzar que el contenedor de blogs sea de una sola columna (no usar layout 2 columnas) */
+.contenedor-blogs {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

@@ -1,0 +1,424 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App (template Vite+React) > snapshots: estructura base estable 1`] = `
+<div>
+  <header
+    class="border-bottom border-secondary"
+  >
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark"
+    >
+      <div
+        class="container-fluid px-0"
+      >
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="/"
+        >
+          <img
+            alt="Level-Up Gamer"
+            class="me-2"
+            height="50"
+            src="img/logo-level-Up.png"
+            width="50"
+          />
+          <span
+            class="orbitron-font fs-3 text-neon"
+          >
+            LEVEL-UP GAMER
+          </span>
+        </a>
+        <button
+          class="navbar-toggler"
+          data-bs-target="#navbarNav"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          <span
+            class="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarNav"
+        >
+          <ul
+            class="navbar-nav ms-auto"
+          >
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link active"
+                href="/"
+              >
+                Inicio
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/Productos"
+              >
+                Productos
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/Categorias"
+              >
+                Categorías
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/Ofertas"
+              >
+                Ofertas
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/Nosotros"
+              >
+                Nosotros
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/Blog"
+              >
+                Blog
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/Contacto"
+              >
+                Contacto
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/login"
+              >
+                Acceder
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/registro"
+              >
+                Registrarse
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                class="btn btn-outline-neon position-relative"
+                href="/carrito"
+              >
+                🛒 Carrito 
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge bg-electric"
+                  id="cart-badge"
+                >
+                  0
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div>
+      <div
+        class="acciones-container"
+        style="display: none;"
+      />
+      <div
+        class="sidebar-admin"
+        id="sidebar-admin"
+        style="display: none;"
+      >
+        <a
+          href="/admin"
+        >
+          Admin
+        </a>
+      </div>
+      <section
+        class="seccion-hero-inicio"
+      >
+        <div
+          class="container-fluid px-0"
+        >
+          <div
+            class="row align-items-center gx-0"
+          >
+            <div
+              class="col-lg-6"
+            >
+              <h1
+                class="titulo-hero-inicio"
+              >
+                LEVEL-UP GAMER
+              </h1>
+              <p
+                class="subtitulo-hero-inicio"
+              >
+                Tu destino definitivo para todo lo gaming en Chile. Desde consolas de última generación hasta periféricos de alto rendimiento.
+              </p>
+              <p
+                class="subtitulo-hero-inicio"
+              >
+                Conectamos a la comunidad gamer con los mejores productos y experiencias.
+              </p>
+              <div
+                class="botones-hero"
+              >
+                <a
+                  class="btn-catalogo-inicio"
+                  href="/Productos"
+                >
+                  Ver Catálogo
+                </a>
+                <a
+                  class="btn-nosotros-inicio"
+                  href="/Nosotros"
+                >
+                  Conócenos
+                </a>
+              </div>
+            </div>
+            <div
+              class="col-lg-6"
+            >
+              <div
+                class="imagen-hero-inicio"
+              >
+                <img
+                  alt="Level-Up Gamer"
+                  src="/img/logo-level-Up.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="seccion-categorias-inicio"
+      >
+        <div
+          class="container-fluid px-0"
+        >
+          <h2
+            class="titulo-categorias-inicio"
+          >
+            CATEGORÍAS DESTACADAS
+          </h2>
+          <div
+            class="grid-categorias-inicio"
+          >
+            <div
+              class="tarjeta-categoria-inicio"
+            >
+              <h3
+                class="titulo-categoria-inicio"
+              >
+                CONSOLAS
+              </h3>
+              <p
+                class="descripcion-categoria-inicio"
+              >
+                PlayStation, Xbox, Nintendo Switch y más. Las últimas consolas de nueva generación para una experiencia gaming incomparable.
+              </p>
+              <a
+                class="btn btn-outline-light"
+                href="/Productos?categoria=consolas"
+              >
+                Ver Consolas
+              </a>
+            </div>
+            <div
+              class="tarjeta-categoria-inicio"
+            >
+              <h3
+                class="titulo-categoria-inicio"
+              >
+                PC GAMER
+              </h3>
+              <p
+                class="descripcion-categoria-inicio"
+              >
+                Equipos de alto rendimiento, componentes y accesorios para armar tu setup definitivo.
+              </p>
+              <a
+                class="btn btn-outline-light"
+                href="/Productos?categoria=computadores"
+              >
+                Ver PCs
+              </a>
+            </div>
+            <div
+              class="tarjeta-categoria-inicio"
+            >
+              <h3
+                class="titulo-categoria-inicio"
+              >
+                ACCESORIOS
+              </h3>
+              <p
+                class="descripcion-categoria-inicio"
+              >
+                Headsets, teclados, mouse, mousepads y más. Mejora tu experiencia con los mejores periféricos.
+              </p>
+              <a
+                class="btn btn-outline-light"
+                href="/Productos?categoria=accesorios"
+              >
+                Ver Accesorios
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="productos-destacados-inicio"
+      >
+        <div
+          class="container-fluid px-0"
+        >
+          <h2
+            class="titulo-seccion"
+          >
+            PRODUCTOS DESTACADOS
+          </h2>
+          <div
+            class="grid-productos-inicio"
+            id="productos-destacados"
+          />
+          <div
+            class="text-center mt-4"
+          >
+            <a
+              class="btn btn-outline-light"
+              href="/Productos"
+            >
+              Ver Todos los Productos
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer
+    class="pie-pagina-inicio"
+  >
+    <div
+      class="container-fluid px-0"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-4"
+        >
+          <h5
+            class="texto-logo-admin"
+          >
+            LEVEL-UP GAMER
+          </h5>
+          <p
+            class="contenido-pie-inicio"
+          >
+            Tu tienda gamer de confianza en Chile.
+          </p>
+        </div>
+        <div
+          class="col-md-4"
+        >
+          <h6>
+            Enlaces Rápidos
+          </h6>
+          <ul
+            class="list-unstyled"
+          >
+            <li>
+              <a
+                class="enlace-footer"
+                href="/Productos"
+              >
+                Productos
+              </a>
+            </li>
+            <li>
+              <a
+                class="enlace-footer"
+                href="/Nosotros"
+              >
+                Nosotros
+              </a>
+            </li>
+            <li>
+              <a
+                class="enlace-footer"
+                href="/contacto"
+              >
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="col-md-4"
+        >
+          <h6>
+            Contacto
+          </h6>
+          <p>
+            contacto@levelupgamer.cl
+            <br />
+            +56 9 1234 5678
+          </p>
+        </div>
+      </div>
+      <div
+        class="text-center mt-3 pt-3 borde-footer"
+      >
+        <small>
+          © 
+          2025
+           Level-Up Gamer. Todos los derechos reservados.
+        </small>
+      </div>
+    </div>
+  </footer>
+</div>
+`;

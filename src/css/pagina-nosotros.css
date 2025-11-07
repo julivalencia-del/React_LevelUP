@@ -1,0 +1,299 @@
+/* ============================================================
+   LEVEL-UP GAMER - PÁGINA NOSOTROS
+   Archivo: pagina-nosotros.css
+   Descripción: Colores y estilos específicos SOLO para nosotros.html
+   ============================================================ */
+
+/* ==================== VARIABLES ESPECÍFICAS DE NOSOTROS ==================== */
+:root {
+  /* Colores únicos de nosotros */
+  --fondo-nosotros: #0f0f0f;        /* Fondo negro profundo */
+  --texto-nosotros: #F5F5F5;        /* Texto blanco puro */
+  --primario-nosotros: #E91E63;     /* Rosa gaming */
+  --secundario-nosotros: #9C27B0;   /* Púrpura */
+  --acento-nosotros: #FFC107;       /* Amarillo oro */
+  --borde-nosotros: #333333;        /* Borde gris */
+}
+
+/* ==================== CUERPO DE LA PÁGINA ==================== */
+.pagina-nosotros {
+  background-color: var(--fondo-nosotros);
+  color: var(--texto-nosotros);
+}
+
+/* ==================== BARRA DE NAVEGACIÓN - NOSOTROS ==================== */
+/* Soporte para navbars Bootstrap en esta página */
+.pagina-nosotros .navbar {
+  background-color: var(--fondo-nosotros) !important;
+  border-bottom: 2px solid var(--borde-nosotros);
+}
+
+.pagina-nosotros .navbar .navbar-brand span {
+  color: var(--acento-nosotros);
+}
+
+.pagina-nosotros .navbar .nav-link {
+  color: var(--texto-nosotros);
+  transition: var(--transicion-normal);
+}
+
+.pagina-nosotros .navbar .nav-link.active,
+.pagina-nosotros .navbar .nav-link:hover {
+  color: var(--primario-nosotros);
+}
+
+.pagina-nosotros .navbar .btn {
+  border-color: var(--primario-nosotros);
+  color: var(--primario-nosotros);
+}
+
+.pagina-nosotros .navbar .btn:hover {
+  border-color: var(--secundario-nosotros);
+  color: var(--secundario-nosotros);
+}
+
+.pagina-nosotros .navbar .badge.bg-electric {
+  background-color: var(--primario-nosotros) !important;
+  color: #000;
+}
+
+/* ==================== PIE DE PÁGINA - NOSOTROS ==================== */
+.pagina-nosotros .pie-pagina-inicio {
+  background-color: var(--fondo-nosotros);
+  border-top: 2px solid var(--borde-nosotros);
+  padding: 2rem 0;
+  margin-top: 3rem;
+  color: var(--texto-nosotros);
+}
+
+.pagina-nosotros .enlace-footer { color: var(--texto-nosotros); text-decoration: none; }
+.pagina-nosotros .enlace-footer:hover { color: var(--primario-nosotros); }
+.pagina-nosotros .borde-footer { border-top: 1px solid var(--borde-nosotros); }
+
+/* ==================== HERO DE NOSOTROS ==================== */
+.hero-nosotros {
+  background: linear-gradient(135deg, var(--fondo-nosotros) 0%, #1a1a1a 100%);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.titulo-hero-nosotros {
+  font-size: 2.5rem;
+  color: var(--primario-nosotros);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.subtitulo-hero-nosotros {
+  font-size: 1.25rem;
+  color: var(--texto-nosotros);
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+/* ==================== SECCIÓN DE HISTORIA ==================== */
+.seccion-historia-nosotros {
+  padding: 4rem 0;
+  background-color: #1a1a1a;
+}
+
+.titulo-seccion-nosotros {
+  font-size: 2rem;
+  color: var(--secundario-nosotros);
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contenido-historia-nosotros {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--texto-nosotros);
+}
+
+/* ==================== SECCIÓN DE EQUIPO ==================== */
+.seccion-equipo-nosotros {
+  padding: 4rem 0;
+  background-color: var(--fondo-nosotros);
+}
+
+.titulo-equipo-nosotros {
+  font-size: 2rem;
+  color: var(--primario-nosotros);
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.grid-equipo-nosotros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tarjeta-equipo-nosotros {
+  background-color: #1a1a1a;
+  border: 2px solid var(--borde-nosotros);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transicion-normal);
+}
+
+.tarjeta-equipo-nosotros:hover {
+  transform: translateY(-10px);
+  border-color: var(--primario-nosotros);
+  box-shadow: 0 0 15px rgba(233, 30, 99, 0.3);
+}
+
+.imagen-equipo-nosotros {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--primario-nosotros);
+  object-fit: cover;
+}
+
+.nombre-equipo-nosotros {
+  font-size: 1.5rem;
+  color: var(--texto-nosotros);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.rol-equipo-nosotros {
+  color: var(--primario-nosotros);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.descripcion-equipo-nosotros {
+  color: var(--texto-nosotros);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ==================== SECCIÓN DE VALORES ==================== */
+.seccion-valores-nosotros {
+  padding: 4rem 0;
+  background-color: #1a1a1a;
+}
+
+.titulo-valores-nosotros {
+  font-size: 2rem;
+  color: var(--secundario-nosotros);
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.grid-valores-nosotros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tarjeta-valor-nosotros {
+  background-color: var(--fondo-nosotros);
+  border: 2px solid var(--borde-nosotros);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transicion-normal);
+}
+
+.tarjeta-valor-nosotros:hover {
+  border-color: var(--secundario-nosotros);
+  transform: translateY(-5px);
+}
+
+.icono-valor-nosotros {
+  font-size: 3rem;
+  color: var(--primario-nosotros);
+  margin-bottom: 1rem;
+}
+
+.titulo-valor-nosotros {
+  font-size: 1.25rem;
+  color: var(--texto-nosotros);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.descripcion-valor-nosotros {
+  color: var(--texto-nosotros);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* ==================== SECCIÓN DE CONTACTO - NOSOTROS ==================== */
+.seccion-contacto-nosotros {
+  padding: 4rem 0;
+  background-color: var(--fondo-nosotros);
+  text-align: center;
+}
+
+.titulo-contacto-nosotros {
+  font-size: 2rem;
+  color: var(--primario-nosotros);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.subtitulo-contacto-nosotros {
+  font-size: 1.125rem;
+  color: var(--texto-nosotros);
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.btn-contacto-nosotros {
+  background-color: var(--primario-nosotros);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transicion-normal);
+}
+
+.btn-contacto-nosotros:hover {
+  background-color: var(--secundario-nosotros);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(156, 39, 176, 0.5);
+}
+
+/* ==================== RESPONSIVE - NOSOTROS ==================== */
+@media (max-width: 768px) {
+  .titulo-hero-nosotros {
+    font-size: 2rem;
+  }
+
+  .grid-equipo-nosotros {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-valores-nosotros {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta-equipo-nosotros,
+  .tarjeta-valor-nosotros {
+    padding: 1.5rem;
+  }
+}

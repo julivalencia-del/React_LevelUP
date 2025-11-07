@@ -1,0 +1,572 @@
+/* ============================================================
+   LEVEL-UP GAMER - FORMULARIOS (LOGIN, REGISTRO, CONTACTO)
+   Archivo: pagina-formularios.css
+   Descripción: Colores y estilos específicos SOLO para formularios
+   ============================================================ */
+
+/* ==================== VARIABLES ESPECÍFICAS DE FORMULARIOS ==================== */
+:root {
+  /* Colores únicos de formularios */
+  --fondo-formularios: #121212;     /* Fondo gris muy oscuro */
+  --texto-formularios: #E0E0E0;     /* Texto gris claro */
+  --primario-formularios: #9B59B6;  /* Púrpura gaming */
+  --secundario-formularios: #E91E63; /* Rosa intenso */
+  --acento-formularios: #00BCD4;    /* Cyan gaming */
+  --borde-formularios: #404040;     /* Borde gris */
+}
+
+/* ==================== CUERPO DE LA PÁGINA ==================== */
+.pagina-formularios {
+  background-color: var(--fondo-formularios);
+  color: var(--texto-formularios);
+}
+
+/* ==================== BARRA DE NAVEGACIÓN - FORMULARIOS ==================== */
+/* Soporte para navbars Bootstrap en estas páginas */
+.pagina-formularios .navbar {
+  background-color: var(--fondo-formularios) !important;
+  border-bottom: 2px solid var(--borde-formularios);
+}
+
+.pagina-formularios .navbar .navbar-brand span {
+  color: var(--acento-formularios);
+}
+
+.pagina-formularios .navbar .nav-link {
+  color: var(--texto-formularios);
+  transition: var(--transicion-normal);
+}
+
+.pagina-formularios .navbar .nav-link.active,
+.pagina-formularios .navbar .nav-link:hover {
+  color: var(--primario-formularios);
+}
+
+.pagina-formularios .navbar .btn {
+  border-color: var(--primario-formularios);
+  color: var(--primario-formularios);
+}
+
+.pagina-formularios .navbar .btn:hover {
+  border-color: var(--secundario-formularios);
+  color: var(--secundario-formularios);
+}
+
+.pagina-formularios .navbar .badge.bg-electric {
+  background-color: var(--primario-formularios) !important;
+  color: #000;
+}
+
+/* ==================== PIE DE PÁGINA - FORMULARIOS ==================== */
+.pagina-formularios .pie-pagina-inicio {
+  background-color: var(--fondo-formularios);
+  border-top: 2px solid var(--borde-formularios);
+  padding: 2rem 0;
+  margin-top: 3rem;
+  color: var(--texto-formularios);
+}
+
+.pagina-formularios .enlace-footer { color: var(--texto-formularios); text-decoration: none; }
+.pagina-formularios .enlace-footer:hover { color: var(--primario-formularios); }
+.pagina-formularios .borde-footer { border-top: 1px solid var(--borde-formularios); }
+
+/* Asegurar visibilidad del badge del carrito en formularios */
+.pagina-formularios #cart-badge {
+  background-color: var(--primario-formularios) !important;
+  color: #000 !important;
+  border: 1px solid #000;
+}
+
+/* ==================== CONTENEDOR DE FORMULARIO ==================== */
+.contenedor-formulario {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--fondo-formularios);
+  border: 2px solid var(--borde-formularios);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Los contenedores de página (login/registro/contacto) no deben tener caja propia */
+.contenedor-formulario-login,
+.contenedor-formulario-registro,
+.contenedor-contacto {
+  max-width: 100%;
+  margin: 2rem 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.encabezado-formulario,
+.encabezado-formulario-login,
+.encabezado-formulario-registro,
+.encabezado-formulario-contacto {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-formulario,
+.logo-formulario-login,
+.logo-formulario-registro {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  border: 2px solid var(--primario-formularios);
+}
+
+.titulo-formulario,
+.titulo-formulario-login,
+.titulo-formulario-registro,
+.titulo-formulario-contacto {
+  font-size: 1.5rem;
+  color: var(--primario-formularios);
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo-formulario,
+.subtitulo-formulario-login,
+.subtitulo-formulario-registro,
+.subtitulo-formulario-contacto {
+  color: var(--texto-formularios);
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* ==================== GRUPOS DE FORMULARIO ==================== */
+.grupo-formulario,
+.grupo-formulario-login,
+.grupo-formulario-registro,
+.grupo-formulario-contacto {
+  margin-bottom: 1.5rem;
+}
+
+.etiqueta-formulario,
+.etiqueta-formulario-login,
+.etiqueta-formulario-registro,
+.etiqueta-formulario-contacto {
+  display: block;
+  color: var(--texto-formularios);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.etiqueta-formulario.requerido::after {
+  content: " *";
+  color: #ff3d00;
+}
+
+/* ==================== CAMPOS DE FORMULARIO ==================== */
+.control-formulario,
+.control-formulario-login,
+.control-formulario-registro,
+.control-formulario-contacto {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #1a1a1a;
+  border: 2px solid var(--borde-formularios);
+  border-radius: 4px;
+  color: var(--texto-formularios);
+  font-size: 1rem;
+  transition: var(--transicion-normal);
+}
+
+.control-formulario:focus,
+.control-formulario-login:focus,
+.control-formulario-registro:focus,
+.control-formulario-contacto:focus {
+  outline: none;
+  border-color: var(--primario-formularios);
+  box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.1);
+}
+
+.control-formulario:disabled,
+.control-formulario-login:disabled,
+.control-formulario-registro:disabled,
+.control-formulario-contacto:disabled {
+  background-color: #0a0a0a;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.control-formulario.invalido,
+.control-formulario-login.invalido,
+.control-formulario-registro.invalido,
+.control-formulario-contacto.invalido {
+  border-color: #ff3d00;
+}
+
+.control-formulario.valido,
+.control-formulario-login.valido,
+.control-formulario-registro.valido,
+.control-formulario-contacto.valido {
+  border-color: #00c853;
+}
+
+/* ==================== SELECT ==================== */
+.select-formulario,
+.select-formulario-login,
+.select-formulario-registro,
+.select-formulario-contacto {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #1a1a1a;
+  border: 2px solid var(--borde-formularios);
+  border-radius: 4px;
+  color: var(--texto-formularios);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+}
+
+.select-formulario:focus,
+.select-formulario-login:focus,
+.select-formulario-registro:focus,
+.select-formulario-contacto:focus {
+  outline: none;
+  border-color: var(--primario-formularios);
+  box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.1);
+}
+
+/* ==================== TEXTAREA ==================== */
+.area-texto-formulario,
+.area-texto-formulario-contacto {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #1a1a1a;
+  border: 2px solid var(--borde-formularios);
+  border-radius: 4px;
+  color: var(--texto-formularios);
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  resize: vertical;
+  min-height: 120px;
+  transition: var(--transicion-normal);
+}
+
+.area-texto-formulario:focus,
+.area-texto-formulario-contacto:focus {
+  outline: none;
+  border-color: var(--primario-formularios);
+  box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.1);
+}
+
+/* ==================== CHECKBOX Y RADIO ==================== */
+.check-formulario {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.input-check-formulario {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primario-formularios);
+}
+
+.etiqueta-check-formulario {
+  color: var(--texto-formularios);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* ==================== MENSAJES DE ERROR Y ÉXITO ==================== */
+.retroalimentacion-invalida {
+  display: none;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #ff3d00;
+}
+
+.control-formulario.invalido ~ .retroalimentacion-invalida {
+  display: block;
+}
+
+.retroalimentacion-valida {
+  display: none;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #00c853;
+}
+
+.control-formulario.valido ~ .retroalimentacion-valida {
+  display: block;
+}
+
+.texto-ayuda-formulario {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--texto-formularios);
+  opacity: 0.7;
+}
+
+/* ==================== BOTONES DE FORMULARIO ==================== */
+.acciones-formulario,
+.acciones-formulario-login,
+.acciones-formulario-registro,
+.accion-formulario-login {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-enviar-formulario {
+  flex: 1;
+  padding: 1rem;
+  background-color: var(--primario-formularios);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+}
+
+.btn-enviar-formulario:hover {
+  background-color: var(--secundario-formularios);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+}
+
+.btn-enviar-formulario:disabled {
+  background-color: var(--borde-formularios);
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-cancelar-formulario {
+  flex: 1;
+  padding: 1rem;
+  background-color: transparent;
+  color: var(--texto-formularios);
+  border: 2px solid var(--borde-formularios);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+}
+
+.btn-cancelar-formulario:hover {
+  border-color: #ff3d00;
+  color: #ff3d00;
+}
+
+/* ==================== FORMULARIO DE LOGIN ESPECÍFICO ==================== */
+.formulario-login {
+  max-width: 600px; /* igual que registro */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Centrado del login similar al registro */
+.contenedor-formulario-login .container {
+  display: flex;
+  align-items: flex-start; /* alinear arriba para evitar mucho espacio */
+  justify-content: center; /* centrado horizontal */
+  padding: 2rem 0; /* espacio moderado arriba/abajo */
+  min-height: auto; /* quitar 100vh que generaba exceso */
+}
+
+/* Asegurar que la columna se centre exactamente igual que registro */
+.contenedor-formulario-login .row {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Encabezado del login igual al registro */
+.encabezado-formulario-login {
+  text-align: center;
+  margin-bottom: 1.25rem; /* un poco más compacto */
+}
+
+/* Acciones del login en fila como registro */
+.accion-formulario-login {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.accion-formulario-login .btn-login-formulario,
+.accion-formulario-login .btn-registro-formulario {
+  flex: 1;
+}
+
+@media (max-width: 576px) {
+  .accion-formulario-login { flex-direction: column; }
+}
+
+.btn-login-formulario {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primario-formularios);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+  margin-top: 0.5rem;
+}
+
+.btn-login-formulario:hover {
+  background-color: var(--acento-formularios);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+/* ==================== FORMULARIO DE REGISTRO ESPECÍFICO ==================== */
+.formulario-registro {
+  max-width: 600px;
+}
+
+/* ==================== CONTACTO ESPECÍFICO ==================== */
+.formulario-contacto {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Encabezados y etiquetas del formulario de contacto */
+.pagina-formularios .encabezado-formulario-contacto .titulo-formulario-contacto {
+  color: var(--primario-formularios);
+}
+
+.pagina-formularios .etiqueta-formulario-contacto {
+  color: var(--texto-formularios);
+}
+
+.pagina-formularios .control-formulario-contacto,
+.pagina-formularios textarea.control-formulario-contacto {
+  background-color: #1a1a1a;
+  border: 2px solid var(--borde-formularios);
+  color: var(--texto-formularios);
+}
+
+.pagina-formularios .control-formulario-contacto:focus,
+.pagina-formularios textarea.control-formulario-contacto:focus {
+  border-color: var(--primario-formularios);
+  box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.1);
+}
+
+.btn-enviar-contacto {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primario-formularios);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+  margin-top: 0.5rem;
+}
+
+.btn-enviar-contacto:hover {
+  background-color: var(--acento-formularios);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+.seccion-hero-contacto {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--fondo-formularios);
+}
+
+.pagina-formularios .titulo-hero-contacto {
+  color: var(--primario-formularios);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.pagina-formularios .subtitulo-hero-contacto {
+  color: var(--texto-formularios);
+  opacity: 0.9;
+}
+
+.mapa-contacto .contenedor-mapa-contacto iframe {
+  border-radius: 8px;
+}
+
+.pagina-formularios .titulo-mapa-contacto {
+  color: var(--primario-formularios);
+}
+
+.pagina-formularios .titulo-info-contacto {
+  color: var(--acento-formularios);
+}
+
+.pagina-formularios .info-contacto {
+  color: var(--texto-formularios);
+  opacity: 0.9;
+}
+
+.btn-registro-formulario {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primario-formularios);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+  margin-top: 0.5rem;
+}
+
+.btn-registro-formulario:hover {
+  background-color: var(--secundario-formularios);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+}
+
+/* ==================== FORMULARIO DE CONTACTO ESPECÍFICO ==================== */
+.formulario-contacto {
+  max-width: 600px;
+}
+
+.btn-contacto-formulario {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primario-formularios);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion-normal);
+  margin-top: 0.5rem;
+}
+
+.btn-contacto-formulario:hover {
+  background-color: var(--acento-formularios);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+/* ==================== RESPONSIVE - FORMULARIOS ==================== */
+@media (max-width: 768px) {
+  .contenedor-formulario {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .acciones-formulario {
+    flex-direction: column;
+  }
+}
