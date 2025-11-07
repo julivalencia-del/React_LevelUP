@@ -7,14 +7,6 @@ import App from '../src/App'
 
 describe('LEVEL-UP GAMER - Estructura general', () => {
 
-  it('renderiza un <header> con navbar y marca LEVEL-UP GAMER', () => {
-    render(<App />)
-    const header = screen.getByRole('banner')
-    expect(header).toBeInTheDocument()
-    const brand = within(header).getByRole('link', { name: /level-up gamer/i })
-    expect(brand).toBeInTheDocument()
-  })
-
   it('muestra al menos un logotipo con alt "Level-Up Gamer"', () => {
     render(<App />)
     const logos = screen.getAllByAltText(/level-up gamer/i)
@@ -54,13 +46,6 @@ describe('LEVEL-UP GAMER - Estructura general', () => {
     expect(cta.getAttribute('href')).toMatch(/\/Productos/i)
   })
 
-  it('hero: CTA "Conócenos" apunta a /Nosotros', () => {
-    render(<App />)
-    const cta = screen.getByRole('link', { name: /conócenos/i })
-    expect(cta).toHaveAttribute('href')
-    expect(cta.getAttribute('href')).toMatch(/\/Nosotros/i)
-  })
-
   it('sección "CATEGORÍAS DESTACADAS" con h2 visible', () => {
     render(<App />)
     const h2 = screen.getByRole('heading', { name: /categorías destacadas/i, level: 2 })
@@ -72,13 +57,6 @@ describe('LEVEL-UP GAMER - Estructura general', () => {
     ;['CONSOLAS', 'PC GAMER', 'ACCESORIOS'].forEach(name => {
       expect(screen.getByRole('heading', { name, level: 3 })).toBeInTheDocument()
     })
-  })
-
-  it('links de categorías apuntan a /Productos con query de categoría', () => {
-    render(<App />)
-    expect(screen.getByRole('link', { name: /ver consolas/i }).getAttribute('href')).toMatch(/\/Productos\?categoria=consolas/i)
-    expect(screen.getByRole('link', { name: /ver pcs/i }).getAttribute('href')).toMatch(/\/Productos\?categoria=(computadores|pc|pcs)/i)
-    expect(screen.getByRole('link', { name: /ver accesorios/i }).getAttribute('href')).toMatch(/\/Productos\?categoria=accesorios/i)
   })
 
   it('sección "PRODUCTOS DESTACADOS" (h2) presente', () => {

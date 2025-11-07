@@ -1,21 +1,9 @@
 import { useEffect, useState } from 'react';
-
-/*
- * ¡IMPORTANTE!
- * Si te da error "Could not resolve", es porque FALTAN LIBRERÍAS.
- * * 1. Detén tu servidor (Ctrl + C)
- * 2. Ejecuta en tu terminal:
- * npm install react-icons bootstrap sweetalert2 react-router-dom
- * 3. Vuelve a iniciar tu servidor (npm run dev)
- */
 import { FaEdit, FaTrash, FaPlus, FaBox } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import Swal from 'sweetalert2';
-
-// AdminLayout es provisto por el enrutador (App.jsx). Este componente no debe envolverlo.
-
 
 function AdminProductos() {
   const PLACEHOLDER_IMG = 'https://placehold.co/36x36/888/FFF?text=?';
@@ -46,22 +34,16 @@ function AdminProductos() {
     });
   };
 
-  // Normaliza la ruta de imagen: soporta
-  // - URLs absolutas (http/https)
-  // - data URLs (base64)
-  // - rutas relativas al public (p.ej.: 'img/foto.jpg' o 'foto.jpg' -> '/img/foto.jpg')
-  // - rutas ya absolutas en el sitio (empiezan con '/')
   const getImageSrc = (url) => {
     if (!url) return PLACEHOLDER_IMG;
-    if (/^https?:\/\//i.test(url)) return url; // URL externa
-    if (/^data:/i.test(url)) return url; // base64 embebido
-    // eliminar prefijo 'public/' si viene del filesystem
+    if (/^https?:\/\//i.test(url)) return url; 
+    if (/^data:/i.test(url)) return url; 
     if (url.startsWith('public/')) url = url.replace(/^public\//, '');
     if (url.startsWith('/public/')) url = url.replace(/^\/public\//, '/');
-    if (url.startsWith('/')) return url; // ya es absoluta dentro del sitio
-    if (url.startsWith('img/')) return `/${url}`; // dentro de public/img
-    if (!url.includes('/')) return `/img/${url}`; // nombre de archivo suelto -> public/img
-    return `/${url}`; // ruta relativa -> hacerla absoluta
+    if (url.startsWith('/')) return url; 
+    if (url.startsWith('img/')) return `/${url}`; 
+    if (!url.includes('/')) return `/img/${url}`; 
+    return `/${url}`; 
   };
 
   // Cargar productos desde localStorage o datos de ejemplo
@@ -96,7 +78,7 @@ function AdminProductos() {
             categoria: 'Consolas',
             precio: 599990,
             stock: 10,
-            imagen: 'https://images.unsplash.com/photo-1606813907291-d015872abed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80'
+            imagen: 'img/playtation-5.webp'
           },
           {
             id: 2,
@@ -106,7 +88,7 @@ function AdminProductos() {
             categoria: 'Computadores Gamers',
             precio: 1899990,
             stock: 5,
-            imagen: 'https://images.unsplash.com/photo-1593640408182-31a70da0b3e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80'
+            imagen: 'img/PC_Gamer_ASUS_ROG_Strix.webp'
           },
           {
             id: 3,
@@ -116,7 +98,7 @@ function AdminProductos() {
             categoria: 'Accesorios',
             precio: 59990,
             stock: 25,
-            imagen: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80'
+            imagen: 'img/Teclado_Razer_BlackWindow.avif'
           }
         ];
         

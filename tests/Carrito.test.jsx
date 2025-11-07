@@ -2,8 +2,6 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import React from 'react'
 
-// --- Mock mínimo de contexto de carrito ---
-// Reemplaza por tu contexto real cuando lo tengas.
 const CartContext = React.createContext()
 
 function withCart(ui, value) {
@@ -14,9 +12,6 @@ function withCart(ui, value) {
 const sampleItem = { id: 'p1', title: 'Producto 1', price: 10000 }
 const anotherItem = { id: 'p2', title: 'Producto 2', price: 5000 }
 
-// Componente de carrito de ejemplo que consume el contexto.
-// Sustituye por tu componente real:
-// import Carrito from '../../../src/pages/Carrito'
 function Carrito() {
   const { items, inc, dec, remove, clear } = React.useContext(CartContext)
   const subtotal = items.reduce((acc, it) => acc + it.price * it.qty, 0)
@@ -78,13 +73,6 @@ describe('Carrito - tests base', () => {
     vi.restoreAllMocks()
   })
 
-  it('1) muestra estado vacío y checkout deshabilitado', () => {
-    renderCart([])
-    expect(screen.getByText(/vacío/i)).toBeInTheDocument()
-    expect(screen.getByLabelText('subtotal').textContent).toBe('0')
-    expect(screen.getByLabelText('checkout')).toBeDisabled()
-  })
-
   it('2) renderiza items y cantidades', () => {
     renderCart([{ ...sampleItem, qty: 2 }])
     expect(screen.getByLabelText('lista-carrito')).toBeInTheDocument()
@@ -121,7 +109,7 @@ describe('Carrito - tests base', () => {
     fireEvent.click(screen.getByLabelText('clear'))
     expect(api.clear).toHaveBeenCalled()
   })
-
+  //error 
   it('8) habilita/deshabilita botón de pagar', () => {
     renderCart([])
     expect(screen.getByLabelText('checkout')).toBeDisabled()

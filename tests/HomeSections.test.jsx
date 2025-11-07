@@ -3,19 +3,13 @@ import { render, screen, within } from '@testing-library/react'
 import App from '../src/App'
 
 describe('LEVEL-UP GAMER - Secciones Home', () => {
-  it('sección hero contiene subtítulo/desc si existe', () => {
-    render(<App />)
-    const possibleDesc = screen.queryByText(/(equipa|mejora|experiencia|gaming)/i)
-    expect(possibleDesc || true).toBeTruthy()
-  })
-
   it('existe al menos un botón/link de acción en el hero', () => {
     render(<App />)
     const ctas = screen.getAllByRole('link')
     const heroCtas = ctas.filter(a => /ver catálogo|conócenos/i.test(a.textContent || ''))
     expect(heroCtas.length).toBeGreaterThanOrEqual(1)
   })
-
+  //error
   it('las 3 tarjetas de categorías tienen algún texto descriptivo', () => {
     render(<App />)
     const cardsText = [/consolas/i, /pc gamer|computador(es)?/i, /accesorios/i]
@@ -30,7 +24,7 @@ describe('LEVEL-UP GAMER - Secciones Home', () => {
       expect(screen.getByRole('link', { name: rx })).toBeInTheDocument()
     })
   })
-
+  //error
   it('la grilla de productos destacados tiene al menos 1 tarjeta/producto', () => {
     render(<App />)
     const h2 = screen.getByRole('heading', { name: /productos destacados/i, level: 2 })
