@@ -1,4 +1,4 @@
-// tests/App.test.jsx
+
 import { describe, it, expect } from 'vitest'
 import { render, screen, within } from '@testing-library/react'
 import App from '../src/App'

@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 
 function Blog() {
     useEffect(() => {
-        // Opcional: clase de página de blogs si el CSS la usa
         document.body.classList.add('pagina-blogs')
         const loadOnce = (src) => new Promise((resolve) => {
             const exist = document.querySelector(`script[src='${src}']`)
@@ -77,7 +76,7 @@ function Blog() {
                 </div>
             </main>
 
-            {/* Modal Blog para 'Leer más' */}
+
             <div className="modal fade" id="modalBlog" tabIndex="-1" aria-hidden="true">
               <div className="modal-dialog modal-lg modal-dialog-centered">
                 <div className="modal-content bg-dark text-light">

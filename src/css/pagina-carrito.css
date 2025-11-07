@@ -1,8 +1,4 @@
-/* ============================================================
-   LEVEL-UP GAMER - CARRITO DE COMPRAS
-   Archivo: pagina-carrito.css
-   Descripción: Colores y estilos específicos SOLO para carrito.html
-   ============================================================ */
+
 
 /* ==================== VARIABLES ESPECÍFICAS DEL CARRITO ==================== */
 :root {
@@ -10,8 +6,8 @@
   --fondo-carrito: #1a1a1a;        /* Fondo gris oscuro */
   --texto-carrito: #FFFFFF;         /* Texto blanco */
   --primario-carrito: #00c853;      /* Verde éxito */
-  --secundario-carrito: #ff6b35;    /* Naranja gaming */
-  --acento-carrito: #ffd93d;        /* Amarillo oro */
+  --secundario-carrito: #ff6b35;    
+  --acento-carrito: #ffd93d;       
   --borde-carrito: #444444;         /* Borde gris */
 }
 
@@ -45,7 +41,7 @@
 }
 
 .badge-orden-level {
-  background-color: var(--primario-carrito) !important; /* verde Level Up */
+  background-color: var(--primario-carrito) !important; 
   color: #000 !important;
   border: 1px solid #00a846;
 }
@@ -104,9 +100,9 @@
 .tabla-carrito.table > :not(caption) > * > * {
   background-color: #0d0d0d !important;
   color: var(--texto-carrito) !important;
-  box-shadow: inset 0 0 0 9999px rgba(0,0,0,0); /* neutraliza sombras de bs */
-  padding-top: 0.25rem;   /* celdas más compactas */
-  padding-bottom: 0.25rem;/* celdas más compactas */
+  box-shadow: inset 0 0 0 9999px rgba(0,0,0,0); 
+  padding-top: 0.25rem;   
+  padding-bottom: 0.25rem;
 }
 
 .tabla-carrito tr,
@@ -255,32 +251,32 @@
 .celda-cantidad-carrito {
   text-align: center;
   vertical-align: middle;
-  display: flex;                 /* apila contenido dentro del td */
-  flex-direction: column;        /* cantidad arriba, eliminar abajo */
-  align-items: center;           /* centrado horizontal */
-  gap: 0.25rem;                  /* separación vertical control/botón */
+  display: flex;                 
+  flex-direction: column;        
+  align-items: center;           
+  gap: 0.25rem;                  
 }
 
 .cantidad-item-carrito {
-  display: inline-flex; /* se centra con text-align del td */
+  display: inline-flex; 
   align-items: center;
-  gap: 0.25rem; /* caja más compacta */
+  gap: 0.25rem; 
   background-color: #333;
   border: 1px solid var(--borde-carrito);
-  border-radius: 3px; /* caja más pequeña */
-  padding: 0.1rem 0.15rem; /* caja más pequeña */
-  min-height: 22px; /* altura contenida */
-  justify-content: center; /* centra -, número y + dentro de la caja */
+  border-radius: 3px; 
+  padding: 0.1rem 0.15rem; 
+  min-height: 22px; 
+  justify-content: center; 
 }
 
 .btn-cantidad-carrito {
-  width: 12px;   /* ultra compacto final */
-  height: 12px;  /* ultra compacto final */
+  width: 12px;   
+  height: 12px;  
   background-color: transparent;
   border: none;
   color: var(--texto-carrito);
   cursor: pointer;
-  font-size: 0.6rem; /* ultra compacto final */
+  font-size: 0.6rem; 
   transition: var(--transicion-normal);
   display: flex;
   align-items: center;
@@ -294,7 +290,7 @@
 }
 
 .pantalla-cantidad-carrito {
-  min-width: 20px; /* ultra compacto */
+  min-width: 20px; 
   text-align: center;
   font-weight: 600;
   color: var(--texto-carrito);
@@ -311,12 +307,12 @@
   background-color: transparent;
   border: 1px solid #ff3d00;
   color: #ff3d00;
-  padding: 0.1rem 0.35rem; /* ultra compacto */
+  padding: 0.1rem 0.35rem; 
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.6rem; /* ultra compacto */
+  font-size: 0.6rem; 
   transition: var(--transicion-normal);
-  display: inline-block;         /* asegura bloque independiente bajo el control */
+  display: inline-block;         
 }
 
 .btn-eliminar-carrito:hover {

@@ -1,12 +1,5 @@
 import { useState } from 'react';
-// Se mantiene la importación de iconos, ya que son necesarios.
 import { FaDownload, FaCalendarAlt, FaChartBar, FaFileExcel, FaFilePdf } from 'react-icons/fa';
-
-// --- CORRECCIÓN DE ERROR ---
-// Se elimina la importación de '../css/globales.css'
-// El componente padre (AdminLayout.jsx) ya está importando este archivo,
-// por lo que importarlo aquí es redundante y puede causar el error de compilación.
-// import '../css/globales.css'; // <--- ELIMINADO
 
 const AdminReportes = () => {
   const [reporteSeleccionado, setReporteSeleccionado] = useState('ventas');
@@ -91,15 +84,9 @@ const AdminReportes = () => {
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="mb-0">Reportes</h2>
       </div>
-      
-      {/* --- CORRECCIÓN DE MAQUETACIÓN ---
-        Se cambió la estructura. Ya no hay col-lg-3 y col-lg-9.
-        Ahora ambas tarjetas están en col-12, una debajo de la otra.
-      */}
+
       <div className="row">
-        
-        {/* --- TARJETA PRINCIPAL (TABLA) --- */}
-        {/* Se cambió a col-12 y se añadió mb-4 (margen inferior) */}
+
         <div className="col-12 mb-4">
           <div className="card h-100">
             <div className="card-header d-flex justify-content-between align-items-center">
@@ -200,15 +187,11 @@ const AdminReportes = () => {
                 </div>
               )}
               
-              {/* --- CORRECCIÓN ---
-                Se eliminó el bloque "Visualización del Reporte"
-              */}
+
             </div>
           </div>
         </div>
         
-        {/* --- TARJETA DE RESUMEN --- */}
-        {/* Se movió aquí, debajo de la tarjeta principal, y se cambió a col-12 */}
         <div className="col-12">
           <div className="card">
             <div className="card-header">

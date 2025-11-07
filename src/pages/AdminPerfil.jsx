@@ -232,10 +232,7 @@ const AdminPerfil = () => {
     });
   };
 
-  // // Funciones de preferencias eliminadas (ya no se usan)
-  // const toggleNotificaciones = () => { ... };
-  // const toggleModoOscuro = () => { ... };
-  // const toggleDosFactores = () => { ... };
+
 
   return (
     <div className="container-fluid p-4">
@@ -271,8 +268,7 @@ const AdminPerfil = () => {
         
         <div className="row">
           
-          {/* --- INICIO COLUMNA IZQUIERDA (PEQUEÑA) --- */}
-          {/* Aquí va el avatar y el cambio de contraseña */}
+
           <div className="col-lg-4">
             <div className="card mb-4">
               <div className="card-body text-center">
@@ -374,11 +370,7 @@ const AdminPerfil = () => {
               </div>
             )}
           </div> 
-          {/* --- FIN COLUMNA IZQUIERDA (col-lg-4) --- */}
 
-
-          {/* --- INICIO COLUMNA DERECHA (GRANDE) --- */}
-          {/* Aquí va la Información y la Actividad Reciente */}
           <div className="col-lg-8">
             <div className="card mb-4">
               <div className="card-header d-flex justify-content-between align-items-center">
@@ -519,12 +511,7 @@ const AdminPerfil = () => {
               </div>
             </div>
             
-            {/*
-             * --- CORRECCIÓN FINAL ---
-             * 1. Se eliminó la tarjeta "Preferencias" que estaba aquí.
-             * 2. Se movió la tarjeta "Actividad Reciente" a esta columna (col-lg-8).
-             * 3. Se añadió 'mt-4' para darle espacio.
-             */}
+
             <div className="card mt-4">
               <div className="card-header">
                 <h5 className="mb-0">Actividad Reciente</h5>

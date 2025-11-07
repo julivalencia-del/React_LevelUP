@@ -1,17 +1,13 @@
-/* ============================================================
-   LEVEL-UP GAMER - FORMULARIOS (LOGIN, REGISTRO, CONTACTO)
-   Archivo: pagina-formularios.css
-   Descripción: Colores y estilos específicos SOLO para formularios
-   ============================================================ */
+
 
 /* ==================== VARIABLES ESPECÍFICAS DE FORMULARIOS ==================== */
 :root {
   /* Colores únicos de formularios */
   --fondo-formularios: #121212;     /* Fondo gris muy oscuro */
   --texto-formularios: #E0E0E0;     /* Texto gris claro */
-  --primario-formularios: #9B59B6;  /* Púrpura gaming */
-  --secundario-formularios: #E91E63; /* Rosa intenso */
-  --acento-formularios: #00BCD4;    /* Cyan gaming */
+  --primario-formularios: #9B59B6;  
+  --secundario-formularios: #E91E63; 
+  --acento-formularios: #00BCD4;    
   --borde-formularios: #404040;     /* Borde gris */
 }
 
@@ -363,7 +359,7 @@
 
 /* ==================== FORMULARIO DE LOGIN ESPECÍFICO ==================== */
 .formulario-login {
-  max-width: 600px; /* igual que registro */
+  max-width: 600px; 
   margin-left: auto;
   margin-right: auto;
 }
@@ -371,10 +367,10 @@
 /* Centrado del login similar al registro */
 .contenedor-formulario-login .container {
   display: flex;
-  align-items: flex-start; /* alinear arriba para evitar mucho espacio */
-  justify-content: center; /* centrado horizontal */
-  padding: 2rem 0; /* espacio moderado arriba/abajo */
-  min-height: auto; /* quitar 100vh que generaba exceso */
+  align-items: flex-start; 
+  justify-content: center; 
+  padding: 2rem 0; 
+  min-height: auto; 
 }
 
 /* Asegurar que la columna se centre exactamente igual que registro */
@@ -387,7 +383,7 @@
 /* Encabezado del login igual al registro */
 .encabezado-formulario-login {
   text-align: center;
-  margin-bottom: 1.25rem; /* un poco más compacto */
+  margin-bottom: 1.25rem; 
 }
 
 /* Acciones del login en fila como registro */

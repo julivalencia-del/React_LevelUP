@@ -184,7 +184,7 @@ export default function Admin() {
 
   return (
     <div className="d-flex">
-      {/* Botón para móviles */}
+
       <button 
         className="sidebar-toggle d-lg-none" 
         onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -193,7 +193,7 @@ export default function Admin() {
         <FaBars />
       </button>
       
-      {/* Sidebar */}
+
       <div className={`admin-sidebar ${sidebarOpen ? 'show' : ''}`}>
         <div className="text-center mb-4 pt-3">
           <h4 className="fw-bold text-levelup-primary">LEVEL UP</h4>
@@ -236,7 +236,7 @@ export default function Admin() {
         </nav>
       </div>
       
-      {/* Contenido principal */}
+
       <div className="admin-content">
         {renderDashboard()}
         <Outlet />

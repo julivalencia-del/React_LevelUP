@@ -1,17 +1,13 @@
-/* ============================================================
-   LEVEL-UP GAMER - PÁGINA NOSOTROS
-   Archivo: pagina-nosotros.css
-   Descripción: Colores y estilos específicos SOLO para nosotros.html
-   ============================================================ */
+
 
 /* ==================== VARIABLES ESPECÍFICAS DE NOSOTROS ==================== */
 :root {
   /* Colores únicos de nosotros */
   --fondo-nosotros: #0f0f0f;        /* Fondo negro profundo */
-  --texto-nosotros: #F5F5F5;        /* Texto blanco puro */
-  --primario-nosotros: #E91E63;     /* Rosa gaming */
-  --secundario-nosotros: #9C27B0;   /* Púrpura */
-  --acento-nosotros: #FFC107;       /* Amarillo oro */
+  --texto-nosotros: #F5F5F5;        
+  --primario-nosotros: #E91E63;     
+  --secundario-nosotros: #9C27B0;   
+  --acento-nosotros: #FFC107;       
   --borde-nosotros: #333333;        /* Borde gris */
 }
 

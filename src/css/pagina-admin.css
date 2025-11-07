@@ -1,22 +1,18 @@
-/* ============================================================
-   LEVEL-UP GAMER - PANEL DE ADMINISTRACIÓN
-   Archivo: pagina-admin.css
-   Descripción: Estilos para el panel de administración de Level Up
-   ============================================================ */
+
 
 /* ==================== VARIABLES ESPECÍFICAS DEL ADMIN ==================== */
 :root {
   /* Colores principales de Level Up */
-  --levelup-dark: #0a0a0a;          /* Negro profundo */
-  --levelup-darker: #050505;        /* Negro más oscuro */
-  --levelup-primary: #00ff88;       /* Verde neón */
-  --levelup-secondary: #00b8d4;     /* Azul neón */
-  --levelup-accent: #ff3d71;        /* Rosa neón */
-  --levelup-text: #e0e0e0;          /* Texto claro */
-  --levelup-text-secondary: #b0b0b0; /* Texto secundario */
-  --levelup-border: #2a2a2a;        /* Borde de elementos */
-  --levelup-card-bg: #121212;       /* Fondo de tarjetas */
-  --levelup-hover: #1e1e1e;         /* Fondo hover */
+  --levelup-dark: #0a0a0a;          
+  --levelup-darker: #050505;       
+  --levelup-primary: #00ff88;     
+  --levelup-secondary: #00b8d4;    
+  --levelup-accent: #ff3d71;        
+  --levelup-text: #e0e0e0;        
+  --levelup-text-secondary: #b0b0b0; 
+  --levelup-border: #2a2a2a;        
+  --levelup-card-bg: #121212;     
+  --levelup-hover: #1e1e1e;         
   --levelup-gradient: linear-gradient(135deg, #00ff88 0%, #00b8d4 100%);
 }
 

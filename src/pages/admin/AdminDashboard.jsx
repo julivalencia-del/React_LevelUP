@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react';
-// Asegúrate de tener react-icons y chart.js instalados
-// Ejecuta: npm install react-icons react-chartjs-2 chart.js
 import { FaBox, FaClipboardList, FaUsers, FaDollarSign, FaArrowUp, FaShoppingCart, FaExclamationTriangle } from 'react-icons/fa';
-
 
 const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
@@ -34,7 +31,6 @@ const AdminDashboard = () => {
     const cargarDatos = () => {
       try {
         // Obtener datos de productos
-        // En una app real, esto vendría de una API, no de localStorage
         // Normalizar productos: asegurar stock y precio numéricos y stock > 0 por defecto
         const productosRaw = JSON.parse(localStorage.getItem('productos')) || [];
         const productos = (Array.isArray(productosRaw) ? productosRaw : []).map(p => {
@@ -64,13 +60,13 @@ const AdminDashboard = () => {
         const productosBajosStock = bajo.length;
         const ordenesPendientes = ordenes.filter(o => o.estado === 'pendiente').length;
         
-        // Calcular total de ventas (suma de todas las órdenes completadas)
+        // Calcular total de ventas 
         const ventasTotales = ordenes
           .filter(o => String(o.estado || '').toLowerCase() === 'completada')
           .reduce((total, orden) => total + (orden.total || 0), 0);
 
-        // Calcular cambio porcentual (ejemplo simplificado)
-        const cambioVentas = 12.5; // En una aplicación real, esto vendría de una comparación con el período anterior
+        // Calcular cambio porcentual 
+        const cambioVentas = 12.5; 
         
         // Actualizar estado
         setStats({
@@ -209,16 +205,9 @@ const AdminDashboard = () => {
         ))}
       </div>
       
-      {/* Se eliminaron: Resumen de Ventas y Productos Destacados */}
-      
-      {/* Sección de actividad reciente y productos bajos en stock */}
       <div className="row mt-4">
       
-        {/*
-         * --- CORRECCIÓN ---
-         * "Actividad Reciente" ahora es col-lg-12 (ancho completo en pantallas grandes)
-         * para que sea más ancha.
-        */}
+
         <div className="col-12 col-lg-12 mb-4">
           <div className="card h-100 border-0 shadow-sm">
             <div className="card-header bg-white border-0 d-flex justify-content-between align-items-center">
@@ -261,11 +250,6 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        {/*
-         * --- CORRECCIÓN ---
-         * "Inventario Bajo" ahora es col-lg-12 (ancho completo en pantallas grandes)
-         * y se mostrará *debajo* de "Actividad Reciente".
-        */}
         <div className="col-12 col-lg-12">
           <div className="card h-100 border-0 shadow-sm">
             <div className="card-header bg-white border-0 d-flex justify-content-between align-items-center">

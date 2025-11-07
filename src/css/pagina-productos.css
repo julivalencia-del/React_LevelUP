@@ -1,17 +1,13 @@
-/* ============================================================
-   LEVEL-UP GAMER - PÁGINA DE PRODUCTOS
-   Archivo: pagina-productos.css
-   Descripción: Colores y estilos específicos SOLO para productos.html
-   ============================================================ */
+
 
 /* ==================== VARIABLES ESPECÍFICAS DE PRODUCTOS ==================== */
 :root {
   /* Colores únicos de la página de productos */
   --fondo-productos: #0a0a0a;       /* Fondo muy oscuro */
   --texto-productos: #E0E0E0;       /* Texto gris claro */
-  --primario-productos: #FF6B35;    /* Naranja gaming */
-  --secundario-productos: #4ECDC4;  /* Turquesa */
-  --acento-productos: #FFD93D;      /* Amarillo oro */
+  --primario-productos: #FF6B35;    
+  --secundario-productos: #4ECDC4; 
+  --acento-productos: #FFD93D;     
   --borde-productos: #444444;       /* Borde gris medio */
 }
 
@@ -237,7 +233,7 @@
 
 .pie-producto-productos {
   display: flex;
-  flex-direction: column; /* precio arriba, botones abajo */
+  flex-direction: column; 
   align-items: center;
   justify-content: center;
   padding-top: 1rem;
@@ -255,8 +251,8 @@
 .botones-producto-productos {
   display: flex;
   gap: 0.5rem;
-  flex-wrap: wrap; /* permite romper línea si es necesario */
-  justify-content: center; /* centrar botones */
+  flex-wrap: wrap; 
+  justify-content: center; 
 }
 
 .btn-agregar-productos {

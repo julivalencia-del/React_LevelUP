@@ -206,7 +206,7 @@ function normalizarProductosEnLS() {
   guardados.forEach(p => {
     const s = sanitizeProducto(p);
     const k = keyOf(s.codigo);
-    if (k) byCodigo.set(k, s); // el último prevalece
+    if (k) byCodigo.set(k, s); 
   });
   const dedup = Array.from(byCodigo.values());
   guardarLS('productos', dedup);
@@ -257,10 +257,10 @@ function actualizarInsigniaCarrito() {
   badges.forEach(b => {
     b.textContent = totalItems;
     b.style.display = totalItems > 0 ? 'inline' : 'none';
-    b.style.position = 'absolute'; // Asegurar posición absoluta
+    b.style.position = 'absolute'; 
     b.style.top = '0';
     b.style.right = '0';
-    b.style.backgroundColor = '#dc3545'; // Rojo para destacar
+    b.style.backgroundColor = '#dc3545'; 
     b.style.color = 'white';
     b.style.borderRadius = '50%';
     b.style.padding = '2px 6px';
@@ -537,9 +537,9 @@ function renderizarCarrito() {
       contador.style.color = '#fff';
       contador.style.fontSize = '1.1rem';
       contador.style.fontWeight = 'bold';
-      contador.style.textAlign = 'center'; // Centrado
-      contador.style.display = 'block'; // Para que ocupe su propio espacio
-      contador.style.margin = '0 auto'; // Centrado horizontal
+      contador.style.textAlign = 'center'; 
+      contador.style.display = 'block'; 
+      contador.style.margin = '0 auto'; 
     }
     return;
   }
@@ -550,15 +550,15 @@ function renderizarCarrito() {
     contador.style.color = '#fff';
     contador.style.fontSize = '1.1rem';
     contador.style.fontWeight = 'bold';
-    contador.style.textAlign = 'center'; // Centrado
-    contador.style.display = 'block'; // Para que ocupe su propio espacio
-    contador.style.margin = '0 auto'; // Centrado horizontal
+    contador.style.textAlign = 'center'; 
+    contador.style.display = 'block'; 
+    contador.style.margin = '0 auto'; 
   }
 
   carrito.forEach((item, index) => {
     const div = document.createElement('div');
     div.classNameName = 'item-carrito';
-    div.style.display = 'flex'; // Flex para layout horizontal
+    div.style.display = 'flex'; 
     div.style.alignItems = 'center';
     div.style.padding = '15px';
     div.style.marginBottom = '10px';
@@ -712,8 +712,8 @@ function configurarLogin() {
   form.addEventListener('submit', (e) => {
     console.log('configurarLogin: Submit ejecutado, previniendo comportamiento por defecto');
     console.log('Validaciones ejecutándose...');
-    e.preventDefault(); // Prevenir envío por defecto
-    e.stopPropagation(); // Detener propagación
+    e.preventDefault(); 
+    e.stopPropagation(); 
     const correo = (form.querySelector('#email') || form.querySelector('#correo') || form.querySelector('input[type="email"]'))?.value?.trim().toLowerCase() || '';
     const pass = (form.querySelector('#password') || form.querySelector('input[type="password"]'))?.value || '';
 
@@ -1158,7 +1158,7 @@ function editarUsuario(id) {
     $('#form-usuario').elements['id'].value = usuario.id;
     $('#form-usuario').elements['nombre'].value = usuario.nombre;
     $('#form-usuario').elements['email'].value = usuario.correo || usuario.email;
-    $('#form-usuario').elements['password'].value = ''; // No mostrar contraseña por seguridad
+    $('#form-usuario').elements['password'].value = ''; 
     $('#form-usuario').elements['rol'].value = usuario.rol;
     
     // Cambiar título del modal

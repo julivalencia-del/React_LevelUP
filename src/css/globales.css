@@ -1,11 +1,4 @@
-/* ============================================================
-   LEVEL-UP GAMER - ESTILOS GLOBALES UNIVERSALES
-   Archivo: globales.css
-   Descripción: Solo cosas que TODAS las páginas necesitan
-   ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap');
-
-/* ==================== COSAS REALMENTE UNIVERSALES ==================== */
 
 /* Fuentes y tamaños base - IGUALES en todas las páginas */
 * {
@@ -22,16 +15,16 @@ body {
 
 /* ==================== BADGE DEL CARRITO GLOBAL ==================== */
 #cart-badge {
-  display: grid;             /* centrado perfecto */
-  place-items: center;       /* centra en X/Y */
-  width: 22px;               /* círculo consistente */
+  display: grid;           
+  place-items: center;      
+  width: 22px;             
   height: 22px;
-  padding: 0 !important;     /* evita óvalos por padding de .badge */
-  border-radius: 50% !important; /* círculo perfecto */
+  padding: 0 !important;     
+  border-radius: 50% !important; 
   font-size: 0.75rem;
-  line-height: 22px;         /* alinea ópticamente el glifo */
+  line-height: 22px;
   font-weight: 700;
-  box-sizing: border-box;    /* evita sumas de borde/padding */
+  box-sizing: border-box; 
   text-align: center;
 }
 
